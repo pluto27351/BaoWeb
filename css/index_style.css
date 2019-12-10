@@ -1,0 +1,139 @@
+html{
+  width: 100%;
+  height: 100%;
+  background-color: #dae8d5;
+  color: #fff;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  background-image: url(../img/bg.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+  position: relative;
+  align-items:center;
+  justify-content:center;
+  font-family: "微軟正黑體","Microsoft JhengHei";
+}
+
+header{
+
+  position:fixed;
+  right:0;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 50px;　
+}
+
+.container{
+  display: block;;
+  position: relative;
+  width: 1240px;
+  /* height: 768px; */
+  padding-top: 7.36%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: auto;
+}
+
+.logo{
+  display: block;
+  /* margin-top: -500px; */
+  animation: rotating 1s ease-in infinite;
+  animation-iteration-count :1;
+  /* top:118px; */
+  /* margin-bottom: 20%; */
+
+/* filter: hue-rotate(27deg); */
+}
+
+@keyframes rotating {
+    0% {
+        margin-top: -500px;
+    }
+    50% {
+        margin-top: 0px;
+        transform: rotate(calc(0deg));
+    }
+    50%,100% {
+        transform: rotate(calc(0deg));
+    }
+    58%,92% {
+        transform: rotate(calc(-15deg));
+    }
+    73% {
+        transform: rotate(calc(15deg));
+    }
+}
+
+
+.logo p{
+  font-size: 70px;
+}
+.logo img{
+  width: 500px;
+  display: block;
+  margin: auto;
+}
+
+.balls{
+  display: block;
+  /* position:relative; */
+  position: fixed;
+  bottom: 25%;
+  margin-left: 168px;   /* 180-12 */
+  width: 921px;
+  height: 172px;
+}
+.ball{
+  width: 172px;
+  height: 172px;
+  display: block;
+  position: relative;
+  /*position:absolute; */
+  float:left;
+  margin-left: 12px;
+  animation: fadeIn 1s ease-in infinite;
+  animation-iteration-count :1;
+}
+
+@keyframes fadeIn {
+    0%,50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.ball p{
+  position:absolute;
+  width: 100%;
+  top: 50%;
+  left:0;
+  font-size: 20px;
+  margin-top: -12px;
+  text-align: center;
+}
+
+.ball img{
+  transform: rotate(0deg);
+}
+
+
+.clear:after{
+    display: block;
+    clear:both;
+    content:"";
+}
