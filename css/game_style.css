@@ -242,6 +242,7 @@ header{
   right:0%;
   clip-path: circle(130px at 100% 0%);
   transition: all 0.7s ease-out;
+  z-index: 100;
 }
 .menu.open {
   background:rgb(100,100,100);
@@ -267,31 +268,28 @@ header{
 .menuball img{
   transform: rotate(0deg);
 }
-.home{
+.menu a:nth-child(1){
   position:absolute;
   top: 5px;
   right: 5px;
 }
 
-.info{
+.menu a:nth-child(2){
   position:absolute;
   top: 6px;
   right: 233px;
 }
-
-.quedata{
+.menu a:nth-child(3){
   position:absolute;
   top: 110px;
   right: 192px;
 }
-
-.bobogame{
+.menu a:nth-child(4){
   position:absolute;
   top: 187px;
   right: 114px;
 }
-
-.people{
+.menu a:nth-child(5){
   position:absolute;
   top: 234px;
   right: 10px;

@@ -1,17 +1,20 @@
-// var logo = $('.logoxxx img');
-var ball = $('.info img');
-// var logoSize = [];
-var ballSize = [];
-
+// var ballSize = [];
 var pi = (Math.PI );
 
 $(document).ready(function(){
-  // logoSize.push(logo.width());
-  // logoSize.push(logo.height());
+  // ballSize.push($('.info img').width());
+  // ballSize.push($('.info img').height());
 
-  ballSize.push(ball.width());
-  ballSize.push(ball.height());
+});
 
+$(".ball").mouseenter(function(){
+  // $(this).children("img").css("width", ballSize[0]*1.05);
+  $(this).children("img").animateRotate(160,500);
+});
+
+$(".ball").mouseleave(function(){
+  // $(this).children("img").css("width", ballSize[0]);
+  $(this).children("img").animateRotate(0,500);
 });
 
 
@@ -67,49 +70,3 @@ function MatrixToReg(matrix){
 //   $(".logo img").animateRotate(0,500);
 //
 // });
-
-$(".info").mouseenter(function(){
-  console.log("in");
-  $(".info img").css("width", ballSize[0]*1.05);
-  $(".info img").animateRotate(160,500);
-});
-$(".info").mouseleave(function(){
-  $(".info img").css("width", ballSize[0]);
-  $(".info img").animateRotate(0,500);
-});
-
-$(".quedata").mouseenter(function(){
-  $(".quedata img").css("width", ballSize[0]*1.05);
-  $(".quedata img").animateRotate(160,500);
-});
-$(".quedata").mouseleave(function(){
-  $(".quedata img").css("width", ballSize[0]);
-  $(".quedata img").animateRotate(0,500);
-});
-
-$(".bobogame").mouseenter(function(){
-  $(".bobogame img").css("width", ballSize[0]*1.05);
-  $(".bobogame img").animateRotate(160,500);
-});
-$(".bobogame").mouseleave(function(){
-  $(".bobogame img").css("width", ballSize[0]);
-  $(".bobogame img").animateRotate(0,500);
-});
-
-$(".game").mouseenter(function(){
-  $(".game img").css("width", ballSize[0]*1.05);
-  $(".game img").animateRotate(160,500);
-});
-$(".game").mouseleave(function(){
-  $(".game img").css("width", ballSize[0]);
-  $(".game img").animateRotate(0,500);
-});
-
-$(".people").mouseenter(function(){
-  $(".people img").css("width", ballSize[0]*1.05);
-  $(".people img").animateRotate(160,500);
-});
-$(".people").mouseleave(function(){
-  $(".people img").css("width", ballSize[0]);
-  $(".people img").animateRotate(0,500);
-});
