@@ -3,7 +3,7 @@
   height: 100%;
   background-color: #dae8d5;
   font-family: "微軟正黑體","Microsoft JhengHei";
-  color: #fff;
+  color: #000;
 
 }
 
@@ -25,7 +25,7 @@ body{
   font-family: "微軟正黑體","Microsoft JhengHei";
 }
 
-h4{
+h3{
   font-family: "微軟正黑體","Microsoft JhengHei";
 }
 
@@ -52,8 +52,6 @@ h4{
   margin: auto;
   /* height: 100%; */
 }
-
-
 
 a{
   text-decoration: none;
@@ -125,4 +123,75 @@ header{
   position:absolute;
   top: 234px;
   right: 10px;
+}
+
+.title{
+  padding-top: 10px;
+  height: 70px;
+}
+.title h3{
+  text-align: center;
+  margin: 0px;
+}
+.title hr{
+  border: 0;
+  height: 1.5px;
+  width: 200px;
+  background: #000;
+  margin: 5px auto 0px auto;
+}
+
+
+.info{
+  width: 1240px;
+  height:800px;
+  background-color: rgba(255,255,255,0.4);
+  radius:10px;
+
+}
+.info p{
+  font-size: 30px;
+  line-height: 40px;
+  /* letter-spacing: 50px;　 */
+}
+
+.infobox{
+  position: relative;
+  width: 5%;
+  height:100%;
+  float: right;
+  -webkit-clip-path:polygon(0% 0%, 0% 100%,130% 100%,130% 0%);
+  box-shadow: 10px 0px 7px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease-out;
+
+}
+
+.infobox>img{
+  display: block;
+  position: absolute;
+  top:25%;
+  right: 0%;
+}
+.infobox>div{
+  opacity: 0;
+  position: absolute;
+  right: 600px;
+  top:40%;
+  transition: all 1s ease-out;
+  transition-delay:0.0s;
+}
+
+.infobox.open{
+  width: 80%;
+}
+
+.infobox.open>img{
+  display: block;
+  position: absolute;
+  top:25%;
+  right:0%;
+}
+.infobox.open>div{
+  opacity: 100;
+  transition-delay:0.7s;
 }
