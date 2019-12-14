@@ -48,7 +48,7 @@ h3{
 .container{
   width: 1280px;
   height: 768px;
-  padding:0px;
+  padding-top:20px;
   margin: auto;
   /* height: 100%; */
 }
@@ -146,7 +146,7 @@ header{
   width: 1240px;
   height:800px;
   background-color: rgba(255,255,255,0.4);
-  radius:10px;
+  border-radius: 10px;
 
 }
 .info p{
@@ -160,6 +160,7 @@ header{
   width: 5%;
   height:100%;
   float: right;
+  border-radius: 10px;
   -webkit-clip-path:polygon(0% 0%, 0% 100%,130% 100%,130% 0%);
   box-shadow: 10px 0px 7px rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease-out;
