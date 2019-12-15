@@ -1,7 +1,7 @@
 var ansbox = document.getElementById("ans");
 var queNum = [];
 var queMax = 22;
-var queMaxGet = 7;
+var queMaxGet = 8;
 var nowQueNo = 0;
 var ansNo = [];
 var dbQue;
@@ -20,8 +20,8 @@ $(document).ready(function(){
   firebase.initializeApp(firebaseConfig);
   //dbQue = firebase.database().ref().child('question');
 
-  randomQue();
-  createQue();
+  // randomQue();
+  // createQue();
   //setInterval(update,60);
 
 
@@ -42,14 +42,17 @@ function randomQue(){
     queNum[b] = t;
   }
 
-  // for(var i=0;i<queMax;i++){
-  //     console.log(i + " = " + queNum[i]);
-  // }
+  for(var i=1;i<=8;i++){
+    $(".point_area img:nth-child("+i+")").css("filter","grayscale(100%)");
+  }
+
 }
 
 function createQue(){
   if(nowQueNo >= queMaxGet) {
     alert("完成題目!")
+    $(".startBtn").css("display","block");
+    $(".question_area").css("background-image","url(img/monster22.png)");
     return;
   }
 
@@ -114,12 +117,12 @@ function createQue(){
       }
 
       randomball(maxAns-1);
-
     }
+
+      $(".question_area").css("background-image","url(img/monster.png)");
   });
 
   gameStart = true;
-  //randomball(ballAmount);
   nowQueNo++;
 }
 
@@ -131,7 +134,6 @@ function clearQue(){
   ansNo.length =0;
   monsters.length = 0;
   monstersball.length = 0;
-//  queNum.length = 0;
 }
 
 $(document).keyup(function(event){

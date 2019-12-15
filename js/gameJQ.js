@@ -1,6 +1,6 @@
 var player = $(".player");
 var bodyArea = $(".ball_area");
-var play_area = $("#play_area")
+var play_area = $("#play_area");
 var balls = [];          //0,1,2,3
 var monsters = [];
 var monstersball = [];   //-1 = 沒有球
@@ -22,8 +22,22 @@ var gameStart = false;
 
 $(document).ready(function(){
   up = down = left = right = false;
+
+  // createQue();
   setInterval(update,10);
 
+});
+
+$(".startBtn").mouseenter(function(event){
+  $(".startBtn").attr('src',"img/startBtn_click.png");
+});
+$(".startBtn").mouseleave(function(event){
+  $(".startBtn").attr('src',"img/startBtn.png");
+});
+$(".startBtn").click(function(event){
+  randomQue();
+  createQue();
+  $(".startBtn").css("display","none");
 });
 
 function update(){
@@ -180,11 +194,15 @@ function monsterAndBall(){
 } //--function monsterAndBall--
 
 function checkAns() {
+  gameStart = false;
+  $(".question_area").css("background-image","url(img/monster22.png)");
+  $('.question').html("");
   for(var i=0;i<monstersball.length;i++){
     var ans = monstersball[i];
     monsters[i].attr('src','img/eat.gif');
   }
 
+  var correct = true;
   setTimeout(function () {
     clearball();
     for(var i=0;i<monstersball.length;i++){
@@ -193,9 +211,22 @@ function checkAns() {
       if (ansNo[ans] == 1) {
         monsters[i].attr('src','img/test_right.png');
       }else{
+        correct = false;
         monsters[i].css('filter','grayscale(100%)');
         monsters[i].attr('src','img/test_wrong.png');
       }
+    }
+  }, 1000);
+
+  setTimeout(function () {
+    if(correct){
+      $(".point_area img:nth-child("+nowQueNo+")").css("filter","grayscale(0%)");
+      $(".point_area img:nth-child("+nowQueNo+")").css('filter', monstercolor[3]);
+      $(".question_area").css("background-image","url(img/monster_happy.png)");
+    }else{
+      $(".point_area img:nth-child("+nowQueNo+")").css("filter","grayscale(0%)");
+      $(".point_area img:nth-child("+nowQueNo+")").css('filter', monstercolor[1]);
+      $(".question_area").css("background-image","url(img/monster_sad.png)");
     }
   }, 1000);
 
@@ -213,6 +244,8 @@ function clearball(){
 }
 
 $(document).keydown(function(event){
+  if(!gameStart) return;
+
   switch (event.keyCode) {
     case 87: //w
     case 38:

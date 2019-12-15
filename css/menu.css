@@ -1,0 +1,63 @@
+.menu {
+  /* background:rgb(100,100,100); */
+  position: absolute;
+  top:0%;
+  right:1%;
+  clip-path: circle(130px at 100% 0%);
+  transition: all 0.7s ease-out;
+  z-index: 100;
+}
+.menu.open {
+  /* background:rgb(100,100,100); */
+  position: absolute;
+  top:0%;
+  right:1%;
+  clip-path: circle(350px at 100% 0%);
+  transition: all 0.7s ease-out;
+}
+
+.menuball{
+  width: 95px;
+}
+.menuball p{
+  position:absolute;
+  width: 95px;
+  top: 50%;
+  left:0;
+  margin-top: -13px;
+  text-align: center;
+}
+
+.menuball img{
+  transform: rotate(0deg);
+  transition: all 0.7s ease-out;
+}
+.menuball:hover>img{
+  transform: rotate(100deg);
+}
+.menu a:nth-child(1){
+  position:absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.menu a:nth-child(2){
+  position:absolute;
+  top: 6px;
+  right: 233px;
+}
+.menu a:nth-child(3){
+  position:absolute;
+  top: 110px;
+  right: 192px;
+}
+.menu a:nth-child(4){
+  position:absolute;
+  top: 187px;
+  right: 114px;
+}
+.menu a:nth-child(5){
+  position:absolute;
+  top: 234px;
+  right: 10px;
+}

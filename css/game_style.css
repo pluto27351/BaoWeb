@@ -64,7 +64,7 @@ h4{
   height:333px;
   margin: 0px;
   text-align: center;
-  background-image: url(../img/monster.png);
+  background-image: url(../img/monster22.png);
   border-radius:10px;
 }
 .question{
@@ -121,6 +121,7 @@ h4{
 .point{
   float: left;
   margin-right: 23.3px;
+  filter:grayscale(100%);
 }
 .top_point{
   margin-bottom:18px;
@@ -234,63 +235,11 @@ header{
 } */
 
 
-
-.menu {
-  background:rgb(100,100,100);
-  position: absolute;
-  top:0%;
-  right:0%;
-  clip-path: circle(130px at 100% 0%);
-  transition: all 0.7s ease-out;
+.startBtn{
+  width: 100px;
+  height:100px;
+  position: fixed;
   z-index: 100;
-}
-.menu.open {
-  background:rgb(100,100,100);
-  position: absolute;
-  top:0%;
-  right:0%;
-  clip-path: circle(350px at 100% 0%);
-  transition: all 0.7s ease-out;
-}
-
-.menuball{
-  width: 95px;
-}
-.menuball p{
-  position:absolute;
-  width: 95px;
-  top: 50%;
-  left:0;
-  margin-top: -13px;
-  text-align: center;
-}
-
-.menuball img{
-  transform: rotate(0deg);
-}
-.menu a:nth-child(1){
-  position:absolute;
-  top: 5px;
-  right: 5px;
-}
-
-.menu a:nth-child(2){
-  position:absolute;
-  top: 6px;
-  right: 233px;
-}
-.menu a:nth-child(3){
-  position:absolute;
-  top: 110px;
-  right: 192px;
-}
-.menu a:nth-child(4){
-  position:absolute;
-  top: 187px;
-  right: 114px;
-}
-.menu a:nth-child(5){
-  position:absolute;
-  top: 234px;
-  right: 10px;
+  top:65%;
+  left: 55%;
 }
