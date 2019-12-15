@@ -1,6 +1,6 @@
 .menu {
   /* background:rgb(100,100,100); */
-  position: absolute;
+  position: fixed;
   top:0%;
   right:1%;
   clip-path: circle(130px at 100% 0%);
