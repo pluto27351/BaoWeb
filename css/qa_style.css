@@ -63,12 +63,12 @@ a{
  color: #fff;
  letter-spacing: 50px;　
 }
-header{
+/* header{
  position: fixed;
  right: 0px;
  width: 356px;
  height:356px;
-}
+} */
 
 .title{
  padding-top: 10px;
