@@ -43,6 +43,7 @@ function randomQue(){
   }
 
   for(var i=1;i<=8;i++){
+    $(".point_area img:nth-child("+i+")").css("opacity","100");
     $(".point_area img:nth-child("+i+")").css("filter","grayscale(100%)");
   }
 
@@ -106,14 +107,14 @@ function createQue(){
       }
 
       for(var i=0;i<ansCount;i++){
-        var monster = document.createElement("img");
-        monster.setAttribute('src','img/test.png');
-        monster.setAttribute('class','monster_style');
-        if(i==ansCount-1) monster.setAttribute('class','monster_style last_box');
-        monsters.push($(monster));
-        monstersball.push(-1);
-        //$(monster).css('color',ballcolor[i]);
-        $('.monster_area').append(monster);
+        var diamond = document.createElement("img");
+        diamond.setAttribute('src','img/test.png');
+        diamond.setAttribute('class','diamond_style');
+        if(i==ansCount-1) diamond.setAttribute('class','diamond_style last_box');
+        diamonds.push($(diamond));
+        diamondsball.push(-1);
+        //$(diamond).css('color',ballcolor[i]);
+        $('.diamond_area').append(diamond);
       }
 
       randomball(maxAns-1);
@@ -129,11 +130,11 @@ function createQue(){
 function clearQue(){
   $('.question').html("");
   $('.ans_area').empty();
-  $('.monster_area').empty();
+  $('.diamond_area').empty();
 
   ansNo.length =0;
-  monsters.length = 0;
-  monstersball.length = 0;
+  diamonds.length = 0;
+  diamondsball.length = 0;
 }
 
 $(document).keyup(function(event){

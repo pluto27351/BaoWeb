@@ -118,28 +118,42 @@ a{
 
 footer{
   width: 100%;
-  height: 25px;
+  height: 89px;
   position: fixed;
-  bottom: 0px;
-  background-color: rgba(0,0,0,0.4);
+  bottom: -10px;
+  background-image: url("../img/footer.png");
 }
 .player{
   position: fixed;
-  bottom: 7px;
-  width: 35px;
+  bottom: 3px;
+  width: 85px;
   transition: all 0.3s ease-out;
+}
+.monster{
+  position: fixed;
+  bottom: -40px;
+  right: -10px;
 }
 footer>div{
   position: fixed;
-  bottom: 5px;
-  width:70px;
+  bottom: 20px;
+  width:75px;
+  animation: floating 1s ease-in-out infinite alternate;
 }
-.point>div{
-  width: 25px;
-  height:25px;
+
+@keyframes floating {
+  from{
+      bottom: 20px;
+   }
+   to{
+      bottom: 30px;
+   }
+}
+
+.point>img{
+  width: 30px;
+  display: block;
   margin:0px auto;
-  border-radius: 50%;
-  background-color: rgb(54,54,54);
 }
 .point>p{
   opacity: 0;

@@ -3,7 +3,7 @@ var infos = [];
 var infoBtns = [];
 var now = 0;
 var tScroll;
-var width,pointW,initPos;
+var width,pointW,initPos,monsterW;
 
 document.addEventListener("wheel", myFunction);
 
@@ -11,7 +11,8 @@ $(document).ready(function(){
   tScroll =0;
   initPos = 60;
   pointW = $("footer>div:nth-child(2)").width();
-  width = $(window).width() - pointW - initPos*2;
+  monsterW = $(".monster").width();
+  width = $(window).width() - pointW - initPos - monsterW;
   for(var i=2;i<=6;i++){
       infos.push($(".container>div:nth-child("+ i +")"));
 

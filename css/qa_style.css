@@ -104,6 +104,8 @@ a{
   align-items: center;
   transform-style: preserve-3d;
   transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: transform 1s;
 }
 .card{
   width: 100%;
@@ -128,10 +130,12 @@ a{
 .back{
 	transform: rotateY(180deg);
 	background-color:#59a87d;
+  -webkit-transform: rotateY(180deg);
 }
 .flipped{
 	transform: rotateY(180deg);
-  }
+  -webkit-transform: rotateY(180deg);
+}
 
 .card p{
   font-size: 24px;
