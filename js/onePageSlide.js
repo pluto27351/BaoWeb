@@ -36,6 +36,7 @@ function myFunction(event) {
 
   var disScroll = tScroll - (now*10);
 
+  console.log("now = "+now);
   if(disScroll <= -10 && now !=0){
       infos[now].removeClass("now");
       now -= 1 ;disScroll=0;
@@ -55,14 +56,16 @@ function myFunction(event) {
 $(".point").click(function(){
   var i= $(this).attr("val");
 
-    infos[now].removeClass("now");
-    now = i ;disScroll=0;
-    infos[now].addClass("now");
+  infos[now].removeClass("now");
+  now = i-'0' ;disScroll=0;
+  infos[now].addClass("now");
 
-    tScroll = now*10;
-    var x = width * (now/4) +  initPos;
-    x = x + pointW/2 - $(".player").width()/2;
-    $(".player").css("left",x);
+  tScroll = now*10;
+  var x = width * (now/4) +  initPos;
+  x = x + pointW/2 - $(".player").width()/2;
+  $(".player").css("left",x);
+
+  console.log("select now = "+now);
 });
 
 //-------單頁滑動效果 end-------------------------
@@ -70,3 +73,16 @@ $(".point").click(function(){
 function Clamp(n,min,max){
   return (n<min?min:(n > max? max:n));
 }
+
+
+//-------圖片箱-----------------------------------
+
+var selectedPic = $(".selected");
+$(".selectBox>img").mouseenter(function(){
+  var picSrc = $(this).attr("src");
+  $(".showPic").attr("src", picSrc);
+
+  selectedPic.removeClass("selected");
+  selectedPic = $(this);
+  selectedPic.addClass("selected");
+});

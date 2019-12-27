@@ -105,6 +105,10 @@ a{
   margin-left: 12px;
   animation: fadeIn 1s ease-in infinite;
   animation-iteration-count :1;
+
+  /* transition: all 0.3s ease-out;
+  transform: rotate(calc(0deg));
+  -webkit-transform: rotate(calc(00deg)); */
 }
 
 @keyframes fadeIn {
@@ -115,7 +119,20 @@ a{
         opacity: 1;
     }
 }
+/* .ball:hover{
+  /* transform: rotate(calc(60deg));
+  -webkit-transform: rotate(calc(60deg)); */
+/*  animation: keepRot 2s infinite linear;
+} */
 
+@keyframes keepRot {
+    0% {
+      transform: rotate(calc(0deg));
+    }
+    100% {
+      transform: rotate(calc(360deg));
+    }
+}
 
 .ball p{
   position:absolute;
