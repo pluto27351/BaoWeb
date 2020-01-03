@@ -14,7 +14,7 @@ body{
   margin-right: auto;
   margin-top: 0;
   background-image: url(../img/bg2.png);
-  background-repeat: no-repeat;
+  background-repeat:no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -47,10 +47,9 @@ h3{
 
 .container{
   width: 1280px;
-  height: 768px;
-  padding-top:20px;
+  height: 100% ;
   margin: auto;
-  /* height: 100%; */
+  /* background-color: rgba(255,255,255,0.4); */
 }
 
 a{
@@ -60,7 +59,7 @@ a{
 }
 
 .title{
-  padding-top: 10px;
+  padding-top: 30px;
   height: 70px;
 }
 .title h3{
@@ -79,9 +78,9 @@ a{
 .info{
   width: 1240px;
   height:800px;
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(255,255,255,0.5);
   border-radius: 10px;
-
+  margin: 0 auto;
 }
 .info p{
   font-size: 25px;

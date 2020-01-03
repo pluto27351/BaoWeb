@@ -146,84 +146,42 @@ a{
   margin-left: 200px;
   margin-top: 150px;
   background-color: rgba(255,255,255,0.4);
-  border-radius: 10px;
+  border-radius: 30px;
 }
 .operator img:nth-child(2){
   display: block;
   margin:250px auto 0 auto;
 }
-.operator img:nth-child(3){
-  display: block;
-  position:absolute;
-  right:527px;
-  top:150px;
-}
-.operator img:nth-child(4){
-  display: block;
-  position:absolute;
-  right:172px;
-  bottom:391px;
-}
-.operator img:nth-child(5){
-  display: block;
-  position:absolute;
-  right:52px;
-  bottom:326px;
-}
-.operator img:nth-child(6){
-  display: block;
-  position:absolute;
-  left:179px;
-  bottom:377px;
-}
 
 .interface img:nth-child(2){
   display: block;
-  margin:156px auto 0 auto;
+  margin:200px auto 0 auto;
 }
-.interface img:nth-child(3){
-  display: block;
-  position:absolute;
-  right:25px;
-  top:200px;
-}
-.interface img:nth-child(4){
-  display: block;
-  position:absolute;
-  right:22px;
-  bottom:81px
-}
-.interface img:nth-child(5){
-  display: block;
-  position:absolute;
-  left:109px;
-  bottom:81px
-}
-.interface img:nth-child(6){
-  display: block;
-  position:absolute;
-  left:65px;
-  top:200px;
-}
+
 .rule>div{
   width: 900px;
   height:305px;
   margin:100px auto -50px auto;
 }
+.rule>div>p{
+  font-size: 25px;
+  width: 450px;
+  line-height: 40px
+}
 .scene{
 
 }
 .picBox{
-  float: right;
-  margin-right: 130px;
-  margin-top:45px;
+  float: left;
+  margin-left: 350px;
+  margin-top:100px;
 }
 .picBox>img{
   margin-bottom: 30px;
 }
 .selectBox>img{
-  width: 179px;
-  height:131px;
+  width: 151px;
+  height:110px;
   margin-right: 13px;
 }
 .selected{
