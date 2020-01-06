@@ -18,13 +18,12 @@ var ballAmount = 4;
 var ballcolor = ["#7c86b8","#b96076", "#efbb35","#59a87d"];
 var diamondcolor = ['hue-rotate(-123deg)','hue-rotate(0deg)' ,'hue-rotate(50deg)','hue-rotate(123deg)'];
 var test = 'hue-rotate(123deg)';
-var gameStart = false;
+var gameStart = false,checking = true;
 
 
 $(document).ready(function(){
   up = down = left = right = false;
 
-  // createQue();
   setInterval(update,10);
 
 });
@@ -38,6 +37,7 @@ $(".startBtn").mouseleave(function(event){
 $(".startBtn").click(function(event){
   randomQue();
   createQue();
+  gameStart = true;
   $(".startBtn").css("display","none");
 });
 
@@ -131,7 +131,6 @@ function collision(item,hitObj,padding_top = 0,padding_right = 0){
 
 
 function follow(aim,follower,ptop=0,pright=0) {
-  console.log("top = " + ptop);
   var posY  = aim.offset().top + (aim.height() - follower.height())/2 + ptop;
   var posX  = aim.offset().left + (aim.width() - follower.width())/2 + pright;
   follower.offset({top:posY , left:posX});
@@ -195,24 +194,29 @@ function diamondAndBall(){
 } //--function monsterAndBall--
 
 function checkAns() {
-  gameStart = false;
-  $(".question_area").css("background-image","url(img/monster22.png)");
+  checking = true;
+
+  $(".question_area").css("background-image","url(img/monster_eat.gif)");
   $('.question').html("");
+
+
+  for(var i=0;i<diamondsball.length;i++){
+    // var ans = diamondsball[i];
+    diamonds[i].addClass("eatDiamond");
+  }
+  clearball();
+  var correct = true;
   for(var i=0;i<diamondsball.length;i++){
     var ans = diamondsball[i];
-    // diamonds[i].attr('src','img/eat.gif');
+    if (ansNo[ans] != 1) correct = false;
     diamonds[i].addClass("eatDiamond");
-    clearball();
   }
-
-  var correct = true;
-  setTimeout(function () {
-    for(var i=0;i<diamondsball.length;i++){
-      var ans = diamondsball[i];
-      console.log("aaa = " + ansNo[ans]);
-      if (ansNo[ans] != 1) correct = false;
-    }
-  }, 1000);
+  // setTimeout(function () {
+  //   for(var i=0;i<diamondsball.length;i++){
+  //     var ans = diamondsball[i];
+  //     if (ansNo[ans] != 1) correct = false;
+  //   }
+  // }, 1000);
 
   setTimeout(function () {
     if(correct){
@@ -245,6 +249,7 @@ $(document).keydown(function(event){
       randomQue();
       createQue();
       $(".startBtn").css("display","none");
+      gameStart = true;
     }
   return;
   }
@@ -267,14 +272,10 @@ $(document).keydown(function(event){
       right = true;
       break;
     default:
-     console.log(event.keyCode);
       break;
   }
 
-   if(event.keyCode == 32){
-      // getball = false;
-      // catchedball = -1;
-      // ballCD = 30;
+   if(event.keyCode == 32 && !checking){
       checkAns();
    }
 })

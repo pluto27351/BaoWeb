@@ -50,13 +50,16 @@ function randomQue(){
 }
 
 function createQue(){
+
   if(nowQueNo >= queMaxGet) {
     alert("完成題目!")
     $(".startBtn").css("display","block");
     $(".question_area").css("background-image","url(img/monster22.png)");
+    gameStart = false;
     return;
   }
 
+  console.log("next");
   var dbQueNo = firebase.database().ref().child('question').child(queNum[nowQueNo]);
 
   dbQueNo.on('child_added', function (snapshot) {
@@ -93,10 +96,8 @@ function createQue(){
 
       for(var i=0;i<maxAns-1;i++){
         var ans = anss[i];
-        // console.log("ans =" + anss[i] + "correct = " + ansNo[i]);
         var newAns = document.createElement("div");
         newAns .setAttribute('class','answer_style set_left');
-        // if((i+1) == maxAns-1){newball.setAttribute('class','answer_style set_left last_box')}
         var anstext = document.createElement("p");
         var ansbox = $(newAns);
         $(anstext).html(ans);
@@ -104,6 +105,8 @@ function createQue(){
         ansbox.css('background-color',ballcolor[i]);
         ansbox.append($(anstext));
         $('.ans_area').append(ansbox);
+
+        console.log("ans"+i + " : " + ansNo[i]);
       }
 
       for(var i=0;i<ansCount;i++){
@@ -123,8 +126,11 @@ function createQue(){
       $(".question_area").css("background-image","url(img/monster.png)");
   });
 
-  gameStart = true;
-  nowQueNo++;
+  setTimeout(function () {
+    checking = false;
+    nowQueNo++;
+  },500);
+
 }
 
 function clearQue(){
@@ -137,9 +143,9 @@ function clearQue(){
   diamondsball.length = 0;
 }
 
-$(document).keyup(function(event){
-  if (event.keyCode == 73){
-    clearQue();
-    createQue();
-  }
-})
+// $(document).keyup(function(event){
+//   if (event.keyCode == 73){
+//     clearQue();
+//     createQue();
+//   }
+// })
